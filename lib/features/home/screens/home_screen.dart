@@ -217,6 +217,10 @@ class _ProgressCard extends StatelessWidget {
     required this.streak,
   });
 
+  // Ajusta estos valores para cambiar el tamaño del círculo y su grosor
+  static const double circleSize = 600.0;
+  static const double circleStrokeWidth = 2.5;
+
   final int completed, total, streak;
   final double progress;
 
@@ -238,21 +242,23 @@ class _ProgressCard extends StatelessWidget {
       child: Row(
         children: [
           SizedBox(
-            width: 150,
-            height: 150,
+            width: circleSize,
+            height: circleSize,
             child: Stack(
               alignment: Alignment.center,
               children: [
-                TweenAnimationBuilder<double>(
-                  tween: Tween(begin: 0, end: progress),
-                  duration: const Duration(milliseconds: 800),
-                  curve: Curves.easeOutCubic,
-                  builder: (_, v, __) => CircularProgressIndicator(
-                    value: v,
-                    strokeWidth: 2.5,
-                    backgroundColor: Colors.white.withValues(alpha: 0.25),
-                    valueColor: const AlwaysStoppedAnimation(Colors.white),
-                    strokeCap: StrokeCap.round,
+                Positioned.fill(
+                  child: TweenAnimationBuilder<double>(
+                    tween: Tween(begin: 0, end: progress),
+                    duration: const Duration(milliseconds: 800),
+                    curve: Curves.easeOutCubic,
+                    builder: (_, v, __) => CircularProgressIndicator(
+                      value: v,
+                      strokeWidth: circleStrokeWidth,
+                      backgroundColor: Colors.white.withValues(alpha: 0.25),
+                      valueColor: const AlwaysStoppedAnimation(Colors.white),
+                      strokeCap: StrokeCap.round,
+                    ),
                   ),
                 ),
                 Text(
