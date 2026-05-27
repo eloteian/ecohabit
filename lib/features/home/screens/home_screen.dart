@@ -218,7 +218,7 @@ class _ProgressCard extends StatelessWidget {
   });
 
   // Ajusta estos valores para cambiar el tamaño del círculo y su grosor
-  static const double circleSize = 150.0;
+  static const double circleSize = 120.0;
   static const double circleStrokeWidth = 2.5;
 
   final int completed, total, streak;
