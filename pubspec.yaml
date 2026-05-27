@@ -1,0 +1,128 @@
+# ==============================================================================
+# EcoHabit - Rastreador de Hábitos Sostenibles
+# ------------------------------------------------------------------------------
+# Licencia: MIT License
+# Autor: EcoHabit Development Team
+# Versión: 1.0.0+1
+# Descripción: Aplicación para el seguimiento de hábitos ecológicos con
+#              análisis de impacto ambiental. Proyecto de código abierto.
+# ==============================================================================
+
+name: eco_habit
+description: >
+  EcoHabit — Rastreador de Hábitos Sostenibles Premium.
+  Aplicación Flutter para el seguimiento de hábitos ecológicos
+  con análisis de impacto ambiental en tiempo real.
+  Proyecto de código abierto bajo licencia MIT.
+publish_to: none
+version: 1.0.0+1
+
+# ==============================================================================
+# ENTORNO DE DESARROLLO
+# ==============================================================================
+environment:
+  sdk: ">=3.2.0 <4.0.0"
+  flutter: ">=3.16.0"
+
+# ==============================================================================
+# DEPENDENCIAS DE PRODUCCIÓN
+# ==============================================================================
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # --- Persistencia local segura -------------------------------------------------
+  # shared_preferences: almacenamiento clave-valor nativo del sistema operativo.
+  # Utilizado para guardar hábitos, estadísticas y preferencias del usuario.
+  shared_preferences: ^2.3.2
+
+  # --- Gestión de estado --------------------------------------------------------
+  # provider: implementación del patrón InheritedWidget. Inyección de
+  # dependencias limpia sin boilerplate excesivo.
+  provider: ^6.1.2
+
+  # --- Tipografía y diseño ------------------------------------------------------
+  # google_fonts: fuentes premium en tiempo de ejecución (Inter, Nunito).
+  google_fonts: ^6.2.1
+
+  # --- Gráficas y estadísticas --------------------------------------------------
+  # fl_chart: biblioteca de gráficas declarativas para Flutter.
+  # Usada para barras de progreso semanal y gráficas de impacto ambiental.
+  fl_chart: ^0.69.0
+
+  # --- Internacionalización y fechas --------------------------------------------
+  # intl: formato de fechas/números localizado (es-MX, es-CO).
+  # Versión fijada por flutter_localizations del SDK de Flutter.
+  intl: ^0.20.2
+
+  # --- Animaciones y microinteracciones -----------------------------------------
+  # animations: paquete oficial de Material animations de Google.
+  animations: ^2.0.11
+
+  # --- Localización (incluida en el SDK de Flutter) ----------------------------
+  # flutter_localizations ya viene con el SDK, solo hay que declarar el sdk dep.
+  flutter_localizations:
+    sdk: flutter
+
+  # --- Iconos -------------------------------------------------------------------
+  # cupertino_icons: íconos de estilo iOS para coherencia visual.
+  cupertino_icons: ^1.0.8
+  flutter_local_notifications: ^21.0.0
+  timezone: ^0.11.0
+  flutter_timezone: ^5.0.2
+  share_plus: ^13.1.0
+
+  # --- Serialización JSON -------------------------------------------------------
+  # Nativo de Dart (dart:convert), sin dependencia extra necesaria.
+
+# ==============================================================================
+# DEPENDENCIAS DE DESARROLLO
+# ==============================================================================
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # flutter_lints: reglas de análisis estático para código limpio y seguro.
+  flutter_lints: ^4.0.0
+
+  # flutter_launcher_icons: generación automática de íconos de la app.
+  flutter_launcher_icons: ^0.14.1
+
+# ==============================================================================
+# CONFIGURACIÓN DEL ÍCONO DE LA APP
+# ==============================================================================
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/icons/app_icon.png"
+  min_sdk_android: 21
+  adaptive_icon_background: "#F0F7F4"
+  adaptive_icon_foreground: "assets/icons/app_icon_foreground.png"
+
+# ==============================================================================
+# RECURSOS ESTÁTICOS (ASSETS)
+# ==============================================================================
+flutter:
+  uses-material-design: true
+
+  assets:
+    # Imágenes de onboarding e ilustraciones
+    - assets/images/
+    # Íconos de la aplicación
+    - assets/icons/
+    # Animaciones Lottie (en versiones futuras)
+    # - assets/animations/
+
+  # Fuentes personalizadas (se usan via google_fonts en runtime,
+  # pero se declaran aquí para uso offline si se requiere bundling).
+  # fonts:
+  #   - family: Inter
+  #     fonts:
+  #       - asset: assets/fonts/Inter-Light.ttf
+  #         weight: 300
+  #       - asset: assets/fonts/Inter-Regular.ttf
+  #         weight: 400
+  #       - asset: assets/fonts/Inter-Medium.ttf
+  #         weight: 500
+  #       - asset: assets/fonts/Inter-SemiBold.ttf
+  #         weight: 600
